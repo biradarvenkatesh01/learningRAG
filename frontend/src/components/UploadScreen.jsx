@@ -163,24 +163,23 @@ export default function UploadScreen({ onUploadSuccess, theme, onToggleTheme }) 
         </div>
       </header>
 
-      {/* Centerpiece: Main Card enclosing Hero & Cartridge Dropzone */}
+      {/* Centerpiece: Hero & Cartridge Dropzone */}
       <main className={`upload-center-core ${isShaking ? 'shake' : ''}`}>
-        <div className="upload-main-card pixel-box">
-          <div className="upload-hero-section">
-            <div className="hero-mascot">
-              <Byte mood={getByteMood()} size={58} />
-            </div>
-            <h1 className="hero-heading pixel-title">INSERT DOCUMENT</h1>
-            <p className="hero-subheading retro-label">
-              Feed me a doc. Ask me anything. I only answer from what you give me.
-            </p>
+        <div className="upload-hero-section">
+          <div className="hero-mascot">
+            <Byte mood={getByteMood()} size={58} />
           </div>
+          <h1 className="hero-heading pixel-title">INSERT DOCUMENT</h1>
+          <p className="hero-subheading retro-label">
+            Feed me a doc. Ask me anything. I only answer from what you give me.
+          </p>
+        </div>
 
-          {/* Dropzone */}
-          <section
-            className={`cartridge-slot pixel-box ${isDragging ? 'drag-over' : ''} ${
-              isProcessing ? 'processing' : ''
-            }`}
+        {/* Dropzone */}
+        <section
+          className={`cartridge-slot pixel-box ${isDragging ? 'drag-over' : ''} ${
+            isProcessing ? 'processing' : ''
+          }`}
           onDrop={handleDrop}
           onDragOver={handleDragOver}
           onDragLeave={handleDragLeave}
@@ -297,7 +296,6 @@ export default function UploadScreen({ onUploadSuccess, theme, onToggleTheme }) 
             )}
           </div>
         </section>
-      </div>
 
         {/* Validation Error Banner with ZAP! Sticker */}
         <AnimatePresence>
