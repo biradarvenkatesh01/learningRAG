@@ -7,7 +7,6 @@ import PixelProgress from './PixelProgress';
 import Confetti from './Confetti';
 import ThemeToggle from './ThemeToggle';
 import MusicToggle from './MusicToggle';
-import UploadStickers from './UploadStickers';
 import { uploadDocument } from '../api';
 import './UploadScreen.css';
 
@@ -147,9 +146,6 @@ export default function UploadScreen({ onUploadSuccess, theme, onToggleTheme }) 
 
   return (
     <div className="upload-full-scene">
-      {/* Cute Pixel Stickers scattered across the upload portal */}
-      <UploadStickers />
-
       {/* Confetti celebration burst */}
       {showConfetti && <Confetti onComplete={() => setShowConfetti(false)} />}
 
