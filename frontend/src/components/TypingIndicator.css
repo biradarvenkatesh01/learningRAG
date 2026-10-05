@@ -1,0 +1,70 @@
+/* Typing Indicator Styles */
+
+.typing-indicator-wrap {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding-left: 4px;
+}
+
+.typing-avatar {
+  flex-shrink: 0;
+}
+
+.typing-bubble {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  background-color: var(--paper-dark);
+  border: var(--border-ink);
+  box-shadow: var(--shadow-hard);
+}
+
+.typing-text {
+  font-size: 0.7rem;
+  color: var(--ink);
+}
+
+.pixel-bouncing-blocks {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.pixel-block {
+  width: 8px;
+  height: 8px;
+  background-color: var(--teal);
+  border: 1px solid var(--ink);
+}
+
+@keyframes pixel-block-bounce {
+  0%, 100% {
+    transform: translateY(0);
+    background-color: var(--teal);
+  }
+  50% {
+    transform: translateY(-8px);
+    background-color: var(--mustard);
+  }
+}
+
+.block-1 {
+  animation: pixel-block-bounce 0.8s steps(3) infinite 0s;
+}
+
+.block-2 {
+  animation: pixel-block-bounce 0.8s steps(3) infinite 0.2s;
+}
+
+.block-3 {
+  animation: pixel-block-bounce 0.8s steps(3) infinite 0.4s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pixel-block {
+    animation: none !important;
+  }
+}

@@ -1,0 +1,90 @@
+/* Toast Notification Styles */
+
+.toast-overlay {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  max-width: 480px;
+  width: calc(100% - 48px);
+}
+
+.toast-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: var(--paper);
+  border: 3px solid var(--tomato);
+  box-shadow: 6px 6px 0 var(--ink);
+  padding: 12px 16px;
+  position: relative;
+}
+
+.toast-sticker-slot {
+  flex-shrink: 0;
+}
+
+.toast-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.toast-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.toast-title {
+  color: var(--tomato);
+  font-size: 0.75rem;
+}
+
+.toast-close-btn {
+  background: none;
+  border: none;
+  font-family: var(--font-pixel);
+  font-size: 0.75rem;
+  color: var(--ink);
+  cursor: pointer;
+  padding: 2px 6px;
+  line-height: 1;
+}
+
+.toast-close-btn:hover {
+  color: var(--tomato);
+}
+
+.toast-message {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: var(--ink);
+  word-break: break-word;
+}
+
+.toast-actions {
+  flex-shrink: 0;
+  margin-left: 8px;
+}
+
+@media (max-width: 600px) {
+  .toast-overlay {
+    bottom: 12px;
+    right: 12px;
+    width: calc(100% - 24px);
+  }
+  
+  .toast-container {
+    flex-wrap: wrap;
+  }
+  
+  .toast-actions {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 8px;
+    display: flex;
+    justify-content: flex-end;
+  }
+}

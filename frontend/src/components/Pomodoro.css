@@ -1,0 +1,157 @@
+/* Pomodoro Styles */
+
+.pomodoro-widget {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.pomodoro-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px dashed var(--ink);
+  padding-bottom: 6px;
+}
+
+.pomodoro-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pomodoro-icon {
+  font-size: 0.9rem;
+}
+
+.pomodoro-title {
+  font-size: 0.7rem;
+  color: var(--ink);
+}
+
+.pomodoro-mode-pills {
+  display: flex;
+  gap: 4px;
+}
+
+.mode-pill {
+  font-family: var(--font-pixel);
+  font-size: 0.55rem;
+  padding: 2px 6px;
+  background: var(--paper-dark);
+  border: 1px solid var(--ink);
+  color: var(--ink);
+  cursor: pointer;
+  clip-path: var(--pixel-notch);
+}
+
+.mode-pill.active-focus {
+  background: var(--tomato);
+  color: #FFFFFF;
+}
+
+.mode-pill.active-break {
+  background: var(--mint);
+  color: var(--ink);
+}
+
+.pomodoro-clock-area {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 4px 0;
+}
+
+.pomodoro-status-tag {
+  font-size: 0.6rem;
+  padding: 2px 6px;
+  border: 1px solid var(--ink);
+}
+
+.pomodoro-status-tag.focus {
+  background: var(--tomato);
+  color: #FFFFFF;
+}
+
+.pomodoro-status-tag.break {
+  background: var(--mint);
+  color: var(--ink);
+}
+
+.pomodoro-digits-lg {
+  font-family: var(--font-retro);
+  font-size: 2.3rem;
+  color: var(--ink);
+  line-height: 1;
+  letter-spacing: 0.06em;
+}
+
+/* Segmented Bar */
+.pomodoro-segment-bar {
+  display: flex;
+  gap: 3px;
+  width: 100%;
+  height: 10px;
+  background: var(--ink);
+  padding: 2px;
+  clip-path: var(--pixel-notch);
+}
+
+.pomodoro-block {
+  flex: 1;
+  background: rgba(244, 233, 216, 0.2);
+}
+
+.pomodoro-block.filled.focus {
+  background: var(--tomato);
+}
+
+.pomodoro-block.filled.break {
+  background: var(--mint);
+}
+
+/* Controls */
+.pomodoro-actions-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pomodoro-btn-main {
+  flex: 1;
+}
+
+/* Tomatoes Gallery */
+.pomodoro-tomatoes-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-top: 1px dashed var(--ink);
+  padding-top: 6px;
+}
+
+.tomatoes-label {
+  font-size: 1.1rem;
+  color: var(--muted);
+}
+
+.tomatoes-collection {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.tomato-icon {
+  image-rendering: pixelated;
+}
+
+.tomato-counter {
+  font-size: 0.65rem;
+  color: var(--tomato);
+}
+
+.no-tomatoes {
+  font-size: 1.1rem;
+  color: var(--muted);
+}

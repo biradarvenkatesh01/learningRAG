@@ -1,0 +1,101 @@
+/* Mascot animations & styles */
+
+.byte-mascot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  user-select: none;
+}
+
+.byte-svg {
+  display: block;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+/* Stepped bob for idle mood */
+@keyframes byte-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+.mood-idle {
+  animation: byte-bob 2.8s steps(3) infinite;
+}
+
+/* Bounce for happy mood */
+@keyframes byte-happy-bounce {
+  0%, 100% { transform: translateY(0) scale(1); }
+  40% { transform: translateY(-8px) scale(1.05); }
+  60% { transform: translateY(0) scale(0.96); }
+}
+
+.mood-happy {
+  animation: byte-happy-bounce 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) infinite;
+}
+
+/* Thinking pulse & drift */
+@keyframes byte-think-pulse {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
+
+.mood-thinking .antenna-bulb {
+  animation: byte-think-pulse 0.7s steps(2) infinite;
+}
+
+@keyframes thought-drift {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-1px, -2px); }
+}
+
+.mood-thinking .thought-dots {
+  animation: thought-drift 1.2s steps(2) infinite;
+}
+
+/* Confused question mark float */
+@keyframes question-wobble {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  50% { transform: translate(0, -3px) rotate(4deg); }
+}
+
+.mood-confused .confused-mark {
+  animation: question-wobble 0.9s steps(3) infinite;
+}
+
+.mood-confused {
+  transform: rotate(-3deg);
+}
+
+/* Sleeping breathe & Zzz drift */
+@keyframes zzz-float {
+  0% { transform: translate(0, 0) scale(0.8); opacity: 0.4; }
+  50% { transform: translate(-2px, -3px) scale(1); opacity: 0.9; }
+  100% { transform: translate(-4px, -6px) scale(1.1); opacity: 0; }
+}
+
+.mood-sleeping .sleep-zzz {
+  animation: zzz-float 2s steps(4) infinite;
+}
+
+@keyframes sleep-breathe {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(2px); }
+}
+
+.mood-sleeping {
+  animation: sleep-breathe 3.5s steps(3) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mood-idle,
+  .mood-happy,
+  .mood-thinking .thought-dots,
+  .mood-thinking .antenna-bulb,
+  .mood-confused .confused-mark,
+  .mood-sleeping,
+  .mood-sleeping .sleep-zzz {
+    animation: none !important;
+  }
+}

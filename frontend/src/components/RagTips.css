@@ -1,0 +1,96 @@
+/* Rag Tips Styles */
+
+.rag-tips-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.rag-tips-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px dashed var(--ink);
+  padding-bottom: 6px;
+}
+
+.rag-tips-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.rag-bulb-icon {
+  font-size: 0.9rem;
+}
+
+.rag-tips-title {
+  font-size: 0.75rem;
+  color: var(--teal);
+}
+
+.rag-tip-counter {
+  font-size: 1.1rem;
+  color: var(--muted);
+}
+
+.rag-tip-body {
+  min-height: 80px;
+  perspective: 600px;
+  display: flex;
+  align-items: center;
+}
+
+.rag-tip-content {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+  transform-origin: center center;
+}
+
+.rag-tip-tag {
+  font-size: 0.6rem;
+  color: var(--mustard);
+  background: var(--ink);
+  padding: 1px 6px;
+  display: inline-block;
+  align-self: flex-start;
+  clip-path: var(--pixel-notch);
+}
+
+.rag-tip-text {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: var(--ink);
+  margin: 0;
+}
+
+.rag-tips-footer {
+  display: flex;
+  justify-content: flex-end;
+  border-top: 1px dashed var(--ink);
+  padding-top: 6px;
+}
+
+.rag-next-btn {
+  background: none;
+  border: none;
+  color: var(--tomato);
+  font-size: 1.15rem;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+.rag-next-btn:hover {
+  text-decoration: underline;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rag-tip-content {
+    transform: none !important;
+  }
+}

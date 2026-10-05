@@ -1,0 +1,137 @@
+/* Sources Drawer Styles */
+
+.sources-drawer-wrapper {
+  margin-top: 12px;
+  width: 100%;
+}
+
+.sources-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--paper);
+  border: 2px solid var(--ink);
+  padding: 6px 12px;
+  box-shadow: 2px 2px 0 var(--ink);
+  cursor: pointer;
+  clip-path: var(--pixel-notch);
+  transition: transform 0.1s steps(2);
+}
+
+.sources-toggle-btn:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0 var(--ink);
+  background: var(--paper-dark);
+}
+
+.sources-btn-text {
+  font-size: 0.65rem;
+  color: var(--ink);
+}
+
+.sources-caret {
+  font-size: 0.65rem;
+  color: var(--muted);
+  margin-left: 2px;
+}
+
+.sources-content-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+  padding: 8px 0;
+}
+
+.source-card {
+  background: var(--paper);
+  border: 2px solid var(--ink);
+  padding: 10px 14px;
+  box-shadow: 3px 3px 0 var(--ink);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.source-card.highlighted {
+  border-color: var(--lilac);
+  box-shadow: 0 0 0 2px var(--lilac), 4px 4px 0 var(--ink);
+  background-color: rgba(155, 140, 255, 0.08);
+}
+
+.source-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  border-bottom: 1px dashed var(--ink);
+  padding-bottom: 6px;
+}
+
+.source-badge-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.source-num-badge {
+  font-size: 0.65rem;
+  color: #FFFFFF;
+  background: var(--lilac);
+  border: 1px solid var(--ink);
+  padding: 2px 6px;
+}
+
+.source-label {
+  font-size: 1.15rem;
+  color: var(--ink);
+}
+
+.source-metric {
+  display: flex;
+  align-items: center;
+}
+
+.source-score-block {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.source-score-text {
+  font-size: 1rem;
+  color: var(--muted);
+}
+
+.source-mini-bar {
+  width: 50px;
+}
+
+.intro-badge {
+  font-size: 0.6rem;
+  background: var(--teal);
+  color: #FFFFFF;
+  border: 1px solid var(--ink);
+  padding: 2px 6px;
+}
+
+.source-snippet-text {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: var(--ink);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.source-expand-toggle {
+  background: none;
+  border: none;
+  color: var(--tomato);
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 2px 0;
+  margin-top: 6px;
+}
+
+.source-expand-toggle:hover {
+  text-decoration: underline;
+}

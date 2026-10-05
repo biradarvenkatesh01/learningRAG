@@ -1,0 +1,76 @@
+/* Float Card Styles */
+
+.float-card-wrapper {
+  position: relative;
+  display: inline-block;
+  user-select: none;
+  z-index: 10;
+  transition: box-shadow 0.2s ease;
+}
+
+.float-card-wrapper.is-draggable {
+  cursor: grab;
+}
+
+.float-card-wrapper.is-draggable:active {
+  cursor: grabbing;
+}
+
+/* Semi-transparent Mustard Desk Tape Strip */
+.card-tape-strip {
+  position: absolute;
+  top: -10px;
+  width: 54px;
+  height: 18px;
+  background-color: rgba(255, 201, 60, 0.75);
+  border: 1px dashed rgba(27, 27, 47, 0.35);
+  box-shadow: 1px 1px 0 rgba(27, 27, 47, 0.2);
+  z-index: 25;
+  pointer-events: none;
+}
+
+.tape-left {
+  left: 12px;
+  transform: rotate(-3deg);
+}
+
+.tape-center {
+  left: 50%;
+  transform: translateX(-50%) rotate(1deg);
+}
+
+.tape-right {
+  right: 12px;
+  transform: rotate(4deg);
+}
+
+/* Inner Box */
+.float-card-inner {
+  position: relative;
+  border: 3px solid var(--ink);
+  box-shadow: 4px 4px 0 var(--ink);
+  clip-path: var(--pixel-notch);
+  padding: 14px 16px;
+}
+
+.float-card-inner.fill-paper {
+  background-color: var(--paper);
+}
+
+.float-card-inner.fill-paper-dark {
+  background-color: var(--paper-dark);
+}
+
+.float-card-inner.fill-halftone {
+  background-color: var(--paper);
+  background-image: radial-gradient(var(--halftone-dot) 1.5px, transparent 1.5px);
+  background-size: 8px 8px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .float-card-wrapper {
+    transform: none !important;
+    animation: none !important;
+    cursor: default !important;
+  }
+}

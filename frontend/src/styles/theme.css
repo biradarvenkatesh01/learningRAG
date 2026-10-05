@@ -1,0 +1,75 @@
+/* PIXEL STUDY BUDDY - Core Theme & Design Tokens */
+
+:root {
+  /* Daylight Palette (Warm Notebook Cream & Ink) */
+  --paper: #F4E9D8;
+  --paper-dark: #E8D9C0;
+  --ink: #1B1B2F;
+  --tomato: #FF5A4E;
+  --mustard: #FFC93C;
+  --teal: #2EC4B6;
+  --lilac: #9B8CFF;
+  --mint: #8FE3B0;
+  --muted: #6B6880;
+
+  /* Typography */
+  --font-pixel: 'Press Start 2P', cursive, monospace;
+  --font-retro: 'VT323', monospace;
+  --font-mono: 'IBM Plex Mono', monospace;
+
+  /* Pixel Geometry & Tactile Rules */
+  --border-width: 3px;
+  --border-ink: var(--border-width) solid var(--ink);
+  --shadow-dist: 4px;
+  --shadow-hard: var(--shadow-dist) var(--shadow-dist) 0 var(--ink);
+  --shadow-hard-lg: 6px 6px 0 var(--ink);
+  --shadow-hard-sm: 2px 2px 0 var(--ink);
+  --pixel-notch: polygon(
+    4px 0,
+    calc(100% - 4px) 0,
+    100% 4px,
+    100% calc(100% - 4px),
+    calc(100% - 4px) 100%,
+    4px 100%,
+    0 calc(100% - 4px),
+    0 4px
+  );
+
+  /* Grid overlay color */
+  --grid-line: rgba(27, 27, 47, 0.06);
+  --halftone-dot: rgba(27, 27, 47, 0.12);
+  --scanline-opacity: 0;
+}
+
+[data-theme="night"] {
+  /* CRT-terminal Dark Theme */
+  --paper: #14121F;
+  --paper-dark: #1F1C30;
+  --ink: #F4E9D8;
+  --muted: #9E9BB5;
+
+  /* Accents stay vibrant */
+  --tomato: #FF5A4E;
+  --mustard: #FFC93C;
+  --teal: #2EC4B6;
+  --lilac: #9B8CFF;
+  --mint: #8FE3B0;
+
+  --grid-line: rgba(244, 233, 216, 0.05);
+  --halftone-dot: rgba(244, 233, 216, 0.12);
+  --scanline-opacity: 0.12;
+}
+
+/* Halftone dot pattern utility */
+.halftone-bg {
+  background-image: radial-gradient(var(--halftone-dot) 1.5px, transparent 1.5px);
+  background-size: 8px 8px;
+}
+
+/* Notebook grid utility */
+.notebook-grid {
+  background-image: 
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+  background-size: 8px 8px;
+}

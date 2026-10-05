@@ -1,0 +1,74 @@
+/* Retro Modal Styles */
+
+.pixel-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(27, 27, 47, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9990;
+  padding: 16px;
+}
+
+.pixel-modal-window {
+  background-color: var(--paper);
+  width: 100%;
+  max-width: 440px;
+  box-shadow: 8px 8px 0 var(--ink);
+  overflow: hidden;
+}
+
+.pixel-modal-titlebar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--ink);
+  color: var(--paper);
+  padding: 8px 14px;
+}
+
+.modal-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.modal-title-text {
+  font-size: 0.75rem;
+}
+
+.modal-close-icon {
+  background: none;
+  border: none;
+  color: var(--paper);
+  font-family: var(--font-pixel);
+  font-size: 0.8rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.modal-close-icon:hover {
+  color: var(--tomato);
+}
+
+.pixel-modal-body {
+  padding: 20px;
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--ink);
+}
+
+.pixel-modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 12px 20px 20px;
+  background-color: var(--paper-dark);
+  border-top: 2px solid var(--ink);
+}

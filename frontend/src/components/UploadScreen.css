@@ -1,0 +1,385 @@
+/* Full-Bleed Upload Scene Styles */
+
+.upload-full-scene {
+  position: relative;
+  width: 100vw;
+  min-height: 100dvh;
+  height: 100dvh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 64px 16px 24px;
+  background-color: var(--paper);
+}
+
+/* Slim Topbar */
+.upload-topbar {
+  position: fixed;
+  top: 12px;
+  left: 16px;
+  right: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px;
+  background-color: var(--paper-dark);
+  border-bottom: 2px solid var(--ink);
+  box-shadow: 0 3px 0 var(--ink);
+  z-index: 40;
+}
+
+.topbar-logo-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.topbar-title {
+  font-size: 0.85rem;
+  color: var(--ink);
+  letter-spacing: 0.05em;
+}
+
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Centerpiece Core */
+.upload-center-core {
+  position: relative;
+  z-index: 25;
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Main Outer Card enclosing Mascot, Headings, and Cartridge Dropzone */
+.upload-main-card {
+  width: 100%;
+  background-color: var(--paper-dark);
+  border: 4px solid var(--ink);
+  box-shadow: 8px 8px 0 var(--ink);
+  padding: 28px 24px 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  position: relative;
+}
+
+/* Hero Section inside Card */
+.upload-hero-section {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.hero-mascot {
+  margin-bottom: 2px;
+}
+
+.hero-heading {
+  font-size: 1.4rem;
+  color: var(--ink);
+  text-shadow: 2px 2px 0 var(--mustard), 4px 4px 0 var(--ink);
+  letter-spacing: 0.06em;
+}
+
+.hero-subheading {
+  font-size: 1.25rem;
+  color: var(--muted);
+  max-width: 480px;
+  line-height: 1.25;
+}
+
+/* Cartridge Slot Dropzone inside Card */
+.cartridge-slot {
+  width: 100%;
+  background: var(--paper);
+  border: 3px solid var(--ink);
+  box-shadow: 4px 4px 0 var(--ink);
+  padding: 6px;
+  cursor: pointer;
+  outline: none;
+  transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.cartridge-slot:hover {
+  transform: translateY(-2px);
+  box-shadow: 6px 6px 0 var(--ink);
+}
+
+.cartridge-slot:focus-visible {
+  outline: 4px solid var(--teal) !important;
+}
+
+.cartridge-slot.drag-over {
+  border-color: var(--teal);
+  box-shadow: 0 0 0 3px var(--teal), 6px 6px 0 var(--ink);
+  transform: scale(1.01);
+}
+
+.cartridge-bezel {
+  background: var(--paper);
+  border: 2px solid var(--ink);
+  padding: 22px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.cartridge-metal-pins {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.pin {
+  width: 12px;
+  height: 6px;
+  background: var(--mustard);
+  border: 1.5px solid var(--ink);
+  box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+/* Idle State in Dropzone */
+.dropzone-idle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  padding: 12px 6px;
+}
+
+.cartridge-slot-aperture {
+  width: 140px;
+  height: 8px;
+  background: var(--ink);
+  border: 1px solid var(--paper-dark);
+  margin-bottom: 16px;
+}
+
+.cartridge-icon-wrap {
+  margin-bottom: 12px;
+}
+
+.drop-main-text {
+  font-size: 0.95rem;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+
+.drop-sub-text {
+  font-size: 1.3rem;
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+
+.format-chips {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.format-chip {
+  font-family: var(--font-pixel);
+  font-size: 0.65rem;
+  background: var(--paper-dark);
+  border: 1.5px solid var(--ink);
+  padding: 4px 8px;
+  color: var(--ink);
+  box-shadow: 2px 2px 0 var(--ink);
+}
+
+.format-size {
+  font-family: var(--font-retro);
+  font-size: 1.15rem;
+  color: var(--tomato);
+  font-weight: bold;
+}
+
+/* Loading & RAG Explanation Panel */
+.upload-loading-panel {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 4px;
+}
+
+.loading-text {
+  font-size: 1rem;
+  color: var(--teal);
+  letter-spacing: 0.08em;
+}
+
+.rag-step-info {
+  width: 100%;
+  background: var(--paper-dark);
+  border: 2px solid var(--ink);
+  padding: 14px 16px;
+  clip-path: var(--pixel-notch);
+  text-align: center;
+}
+
+.rag-step-title {
+  font-size: 0.85rem;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+
+.rag-step-desc {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--ink);
+  line-height: 1.4;
+  margin-bottom: 4px;
+}
+
+.rag-step-note {
+  font-family: var(--font-retro);
+  font-size: 0.95rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* Success Panel */
+.upload-success-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 6px;
+  text-align: center;
+}
+
+.success-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.success-filename {
+  font-size: 0.9rem;
+  color: var(--ink);
+  word-break: break-all;
+}
+
+.success-chunks {
+  font-size: 1.35rem;
+  color: var(--teal);
+  font-weight: bold;
+}
+
+/* Inline Error Box */
+.upload-error-box {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: var(--paper);
+  border: 3px solid var(--tomato);
+  box-shadow: 6px 6px 0 var(--ink);
+  padding: 12px 16px;
+}
+
+.error-text-content {
+  flex: 1;
+}
+
+.error-heading {
+  font-size: 0.75rem;
+  color: var(--tomato);
+  margin-bottom: 2px;
+}
+
+.error-detail {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--ink);
+  line-height: 1.35;
+}
+
+@media (max-width: 680px), (max-height: 720px) {
+  .upload-full-scene {
+    justify-content: flex-start;
+    padding-top: 60px;
+    padding-bottom: 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .upload-full-scene {
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 56px;
+  }
+  .upload-topbar {
+    top: 8px;
+    left: 8px;
+    right: 8px;
+    padding: 6px 10px;
+  }
+  .topbar-title {
+    font-size: 0.72rem;
+  }
+  .upload-center-core {
+    max-width: 100%;
+    gap: 12px;
+  }
+  .upload-main-card {
+    padding: 18px 14px 16px;
+    gap: 14px;
+    border-width: 3px;
+    box-shadow: 6px 6px 0 var(--ink);
+  }
+  .upload-hero-section {
+    gap: 6px;
+  }
+  .hero-heading {
+    font-size: 1.15rem;
+  }
+  .hero-subheading {
+    font-size: 1rem;
+    padding: 0 4px;
+  }
+  .cartridge-slot {
+    border-width: 2px;
+    box-shadow: 3px 3px 0 var(--ink);
+    padding: 4px;
+  }
+  .cartridge-bezel {
+    padding: 16px 10px;
+  }
+  .dropzone-idle {
+    gap: 10px;
+  }
+  .drop-main-text {
+    font-size: 0.95rem;
+  }
+  .drop-formats-row {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px;
+  }
+  .format-chip, .format-size {
+    font-size: 0.6rem;
+    padding: 1px 4px;
+  }
+}

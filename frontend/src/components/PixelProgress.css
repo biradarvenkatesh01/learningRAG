@@ -1,0 +1,89 @@
+/* Segmented Progress Bar */
+
+.pixel-progress-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
+.pixel-progress-label {
+  color: var(--ink);
+  font-size: 1.15rem;
+}
+
+.pixel-progress-track {
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  background: var(--ink);
+  border: 2px solid var(--ink);
+  clip-path: var(--pixel-notch);
+  width: 100%;
+}
+
+.pixel-progress-block {
+  flex: 1;
+  background: rgba(244, 233, 216, 0.15);
+  transition: background-color 0.1s steps(2);
+}
+
+/* Sizes */
+.pixel-progress-sm .pixel-progress-track {
+  gap: 2px;
+  padding: 2px;
+}
+.pixel-progress-sm .pixel-progress-block {
+  height: 8px;
+}
+
+.pixel-progress-md .pixel-progress-block {
+  height: 14px;
+}
+
+.pixel-progress-lg .pixel-progress-block {
+  height: 20px;
+}
+
+/* Variants */
+.pixel-progress-teal .pixel-progress-block.filled {
+  background: var(--teal);
+  box-shadow: inset -2px -2px 0 rgba(0, 0, 0, 0.3);
+}
+
+.pixel-progress-mustard .pixel-progress-block.filled {
+  background: var(--mustard);
+  box-shadow: inset -2px -2px 0 rgba(0, 0, 0, 0.3);
+}
+
+.pixel-progress-mint .pixel-progress-block.filled {
+  background: var(--mint);
+  box-shadow: inset -2px -2px 0 rgba(0, 0, 0, 0.3);
+}
+
+.pixel-progress-tomato .pixel-progress-block.filled {
+  background: var(--tomato);
+  box-shadow: inset -2px -2px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* Indeterminate cycling animation */
+@keyframes block-cycle-teal {
+  0%, 100% {
+    background: rgba(244, 233, 216, 0.12);
+  }
+  35%, 65% {
+    background: var(--teal);
+    box-shadow: inset -2px -2px 0 rgba(0, 0, 0, 0.3);
+  }
+}
+
+.pixel-progress-track.indeterminate.pixel-progress-teal .pixel-progress-block {
+  animation: block-cycle-teal 1.4s steps(2) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pixel-progress-track.indeterminate.pixel-progress-teal .pixel-progress-block {
+    animation: none;
+    background: var(--teal);
+  }
+}
