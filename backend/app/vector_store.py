@@ -5,11 +5,13 @@ from pathlib import Path
 from dotenv import load_dotenv
 from upstash_vector import Index, Vector
 
+from app.embeddings import embed_query, embed_texts
+
 load_dotenv(Path(__file__).resolve().parent.parent / ".env")   # backend/.env
 
 # Upstash Vector is a hosted vector database: data survives across serverless
-# invocations, and it embeds text for us (the index is created with an
-# embedding model), so we send raw text instead of vectors.
+# invocations. The index uses a "Custom" embedding model (384 dims, cosine):
+# we embed the text ourselves in app/embeddings.py and send the vectors.
 # Each uploaded document lives in its own namespace, named after its doc_id.
 BATCH_SIZE = 100
 _index = None
@@ -32,16 +34,17 @@ def _to_similarity(score: float) -> float:
 
 
 def add_chunks(doc_id: str, chunks: list[dict]) -> int:
-    """Store chunks (Upstash embeds them), in the doc_id namespace."""
+    """Embed chunks and store them in the doc_id namespace."""
     index = get_index()
     created_at = int(time.time())   # lets expired sessions be cleaned up later
     for start in range(0, len(chunks), BATCH_SIZE):
         batch = chunks[start:start + BATCH_SIZE]
+        vectors = embed_texts([c["text"] for c in batch])
         index.upsert(
             vectors=[
                 Vector(
                     id=f"{doc_id}_{start + i}",
-                    data=c["text"],
+                    vector=vectors[i],
                     metadata={
                         "text": c["text"],
                         "source": c["source"],
@@ -59,7 +62,7 @@ def add_chunks(doc_id: str, chunks: list[dict]) -> int:
 def search(query: str, doc_id: str, k: int = 5) -> list[dict]:
     """Return the k chunks from this document most similar to the query."""
     results = get_index().query(
-        data=query,
+        vector=embed_query(query),
         top_k=k,
         include_metadata=True,
         namespace=doc_id,

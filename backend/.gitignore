@@ -56,6 +56,7 @@ coverage.xml
 # Local storage, uploads & vector databases
 uploads/
 chroma_db/
+model/
 *.sqlite
 *.sqlite3
 *.db

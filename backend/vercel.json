@@ -1,8 +1,10 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "python scripts/download_model.py",
   "functions": {
     "app/main.py": {
-      "maxDuration": 60
+      "maxDuration": 60,
+      "excludeFiles": "{scripts/**,.venv/**}"
     }
   },
   "crons": [{ "path": "/cleanup", "schedule": "0 4 * * *" }]

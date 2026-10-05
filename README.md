@@ -25,7 +25,8 @@
 | **Frontend** | React 18, Vite | High-performance SPA with instant HMR |
 | **Animation & Audio** | Motion (`motion/react`), Web Audio API | Micro-interactions & procedural chiptune synth |
 | **Backend API** | FastAPI, Python 3.11+ | Serverless REST API endpoints |
-| **Vector DB** | Upstash Vector | Cloud-native vector search (`all-MiniLM-L6-v2`) |
+| **Embeddings** | fastembed (ONNX) | `all-MiniLM-L6-v2`, 384-dim, runs inside the backend |
+| **Vector DB** | Upstash Vector | Cloud-native vector search (Custom index, cosine) |
 | **LLM Inference** | Groq (`openai/gpt-oss-120b` or Llama 3) | Sub-second generative response latency |
 | **Parsers** | PyPDF, `python-docx`, `python-pptx` | Comprehensive multi-format text extraction |
 
@@ -39,10 +40,13 @@
 │   │   ├── main.py          # FastAPI application & endpoints
 │   │   ├── rag.py           # RAG retrieval & answer generation pipeline
 │   │   ├── vector_store.py  # Upstash Vector store integration
+│   │   ├── embeddings.py    # fastembed all-MiniLM-L6-v2 embeddings
 │   │   ├── llm.py           # Groq LLM integration
 │   │   ├── parsers.py       # PDF, DOCX, PPTX, TXT document parsers
 │   │   ├── chunker.py       # Semantic text chunking
 │   │   └── ingest.py        # Ingestion pipeline
+│   ├── scripts/
+│   │   └── download_model.py  # Vercel build step: bundles the embedding model
 │   ├── requirements.txt     # Python production dependencies
 │   ├── vercel.json          # Serverless deployment configuration
 │   └── .env.example         # Backend environment variables template
@@ -66,7 +70,7 @@
 - Python 3.11 or newer
 - Node.js 18 or newer
 - Free [Groq API Key](https://console.groq.com/keys)
-- Free [Upstash Vector Index](https://console.upstash.com/vector) (Model: `sentence-transformers/all-MiniLM-L6-v2`, Metric: `COSINE`)
+- Free [Upstash Vector Index](https://console.upstash.com/vector) (Embedding Model: `Custom`, Dimensions: `384`, Metric: `COSINE`)
 
 ### 2. Backend Setup
 

@@ -36,6 +36,7 @@ htmlcov/
 # Local databases & uploads
 backend/uploads/
 backend/chroma_db/
+backend/model/
 uploads/
 chroma_db/
 *.sqlite
