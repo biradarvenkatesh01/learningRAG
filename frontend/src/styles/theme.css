@@ -37,6 +37,8 @@
 
   /* Grid overlay color */
   --grid-line: rgba(27, 27, 47, 0.06);
+  --upload-grid-major: rgba(27, 27, 47, 0.12);
+  --upload-grid-minor: rgba(27, 27, 47, 0.05);
   --halftone-dot: rgba(27, 27, 47, 0.12);
   --scanline-opacity: 0;
 }
@@ -56,6 +58,8 @@
   --mint: #8FE3B0;
 
   --grid-line: rgba(244, 233, 216, 0.05);
+  --upload-grid-major: rgba(244, 233, 216, 0.12);
+  --upload-grid-minor: rgba(244, 233, 216, 0.05);
   --halftone-dot: rgba(244, 233, 216, 0.12);
   --scanline-opacity: 0.12;
 }

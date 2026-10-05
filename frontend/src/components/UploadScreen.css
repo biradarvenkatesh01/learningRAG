@@ -13,6 +13,13 @@
   justify-content: center;
   padding: 64px 16px 24px;
   background-color: var(--paper);
+  background-image: 
+    linear-gradient(to right, var(--upload-grid-major) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--upload-grid-major) 1px, transparent 1px),
+    linear-gradient(to right, var(--upload-grid-minor) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--upload-grid-minor) 1px, transparent 1px);
+  background-size: 96px 96px, 96px 96px, 24px 24px, 24px 24px;
+  background-position: center center;
 }
 
 /* Slim Topbar */
